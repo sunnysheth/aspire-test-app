@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Artisan;
 |
 */
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+Artisan::command('project:init', function () {
+    Artisan::call('migrate:fresh');
+    Artisan::call('passport:install');
+    Artisan::call('vendor:publish');
+    Artisan::call('optimize:clear');
+})->purpose('Setup project');
