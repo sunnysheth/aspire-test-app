@@ -9,6 +9,16 @@ use App\Models\UserLoanApplication;
 use App\Http\Requests\API\LoanApplyRequest;
 use App\Http\Resources\UserLoanApplicationResource;
 
+/** @OA\SecurityScheme(
+    *     type="http",
+    *     description="Login with email and password to get the authentication token",
+    *     name="Token based Based",
+    *     in="header",
+    *     scheme="bearer",
+    *     bearerFormat="JWT",
+    *     securityScheme="apiAuth",
+    * )
+*/
 class ApplicationController extends Controller
 {
     /**
@@ -17,6 +27,7 @@ class ApplicationController extends Controller
         * operationId="Loan apply",
         * tags={"Apply for a loan"},
         * summary="Apply for a loan",
+        * security={{"bearer_token":{}}},
         * description="Apply for a loan",
         *     @OA\RequestBody(
         *         @OA\JsonContent(),
