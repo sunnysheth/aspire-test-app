@@ -55,4 +55,3 @@ All routes related to this mini-aspire API are located in `routes/api.php` file.
 
 
 API Postman collection: https://www.getpostman.com/collections/88b485763d77534a85d5
-Open API documentation: <url>/api/documentation
